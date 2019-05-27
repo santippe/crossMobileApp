@@ -16,15 +16,23 @@
             <div id="calendar"></div>
             <div id="statusday"></div>
             <script>
-                let dayInMonth = 31
-                let xFunc = i => 0
+                let todayDate = new Date();
+                let dayInMonth = new Date(
+                    todayDate.getFullYear()
+                    , todayDate.getMonth() + 1
+                    , 0).getDate()
+                //define what to for pressing day
+                let xFunc = i => {
+                    JsInterface.Toast(i)
+                    //
+                }
                 let calendar = document.querySelector('#calendar')
                 for (let a = 1; a < dayInMonth + 1; a++) {
                     let elem = document.createElement('div');
                     elem.className = 'date'
                     elem.innerHTML = a
                     calendar.appendChild(elem);
-                    elem.onclick = xFunc
+                    elem.onclick = () => { xFunc(a) }
                 }                
             </script>
             <button onclick="tryLogout()">Do Something cool!</button>
