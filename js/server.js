@@ -11,10 +11,6 @@ function callServer(method, url, someToSend, success, fail, timeout) {
             }
         }
     }
-    xhr.ontimeout = function (e) {
-        JsInterface.Message("Error", "Nessuna connessione disponibile")
-        xhr = null
-        //setTimeout(callServer())
-    }
+    xhr.ontimeout = timeout
     xhr.send(someToSend)
 }
