@@ -23,14 +23,14 @@
             if (xhr.status == 200 && xhr.readyState == 4) {
                 //output.innerHTML = xhr.responseText
                 //output.innerHTML = 'TEST SEND OK'
-                JsInterface.Message("diocan");
+                //JsInterface.Message("diocan");
             }
             output.innerHTML = pp
         };
         function hj() {
             pp = ''
             output.innerHTML = pp
-            xhr.open("POST", "http://192.168.1.100/api/givesome")
+            xhr.open("POST", "http://192.168.1.100/api/storesession")
             setTimeout(() => { xhr.send() }, 1000)
             //output.innerHTML = 'DIOCANE'
         }
